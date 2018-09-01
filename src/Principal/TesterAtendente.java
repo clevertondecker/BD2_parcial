@@ -14,7 +14,7 @@ import Dominio.Cliente;
  *
  * @author ton
  */
-public class TesterFuncionario {
+public class TesterAtendente {
 
     /**
      * @param args the command line arguments
@@ -42,6 +42,9 @@ public class TesterFuncionario {
         Fldao.update(f1);
 
         Fldao.delete(15);
+
+        //Inner join entre tabelas
+        Fldao.SelectTables();
 
         conex.fecharConexao();
 

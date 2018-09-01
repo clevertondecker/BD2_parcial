@@ -20,25 +20,24 @@ public class TesterCliente {
 
         ClienteDao Cldao = new ClienteDao(conex.abrirConexao());
 
-             
         //Method Save
-          Cldao.save(c);
-      
-        
+        Cldao.save(c);
+
         //Method GetOne
-        //System.out.println(Cldao.getOne(2));
+        System.out.println(Cldao.getOne(2));
 
         //List All
-        //System.out.println(Cldao.list());
-        
+        System.out.println(Cldao.list());
+
         //Method Update
-        //c1.setId(1);
-        //Cldao.update(c1);
-        
-        //Cldao.delete(1);
-        
+        c1.setId(1);
+        Cldao.update(c1);
+
+        Cldao.delete(1);
+
+        //Inner join entre tabelas
         Cldao.SelectTables();
-        
+
         conex.fecharConexao();
     }
 }

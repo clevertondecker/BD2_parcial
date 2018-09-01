@@ -129,9 +129,30 @@ public class AtendenteDao implements IDao<Atendente> {
         }
     }
 
-    @Override
+   @Override
     public void SelectTables() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        String SQL = "select Cliente.nome, Cliente.email, Cliente.atendente from Cliente join Atendente;";
+
+        try {
+            Statement st = this.connection.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+
+            while (rs.next()) {
+
+                String nome = rs.getString("nome");
+                String atendente = rs.getString("atendente");
+                String email = rs.getString("email");
+
+             
+                Atendente a = new  Atendente(nome, atendente, email);
+                System.out.println(a.getNome()+ " - " + a.getAtendente()+ " - " + a.getEmail());
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+
 
 }

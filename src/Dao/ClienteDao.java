@@ -126,7 +126,6 @@ public class ClienteDao implements IDao<Cliente> {
     @Override
     public void SelectTables() {
 
-        //String SQL = "insert into livro (id, titulo, generoID) values (?,?,?)";
         String SQL = "select Cliente.nome, Cliente.email, Cliente.atendente from Cliente join Atendente;";
 
         try {
